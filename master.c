@@ -44,8 +44,9 @@ int				lenbase(long long value, int base)
 ** This function will set  the length when called, & must be called last.
 */
 
-static void		set_lenth(t_fmt *f, char **fmt)
+static void		set_lenth(t_fmt *f, char **fmt, va_list ap)
 {
+	asteric(f, fmt, ap, 0);
 	while (*(*fmt) == 'l' || *(*fmt) == 'h' || *(*fmt) == 'j' || *(*fmt) == 'z')
 	{
 		if (*(*fmt) == 'l' && *((*fmt) + 1) == 'l')
@@ -140,5 +141,5 @@ void			set_format(t_fmt *f, char **fmt, va_list ap)
 		else if (*(*fmt) == '0')
 			(*fmt)++;
 	}
-	set_lenth(f, fmt);
+	set_lenth(f, fmt, ap);
 }
