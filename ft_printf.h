@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/31 10:41:16 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/08/13 11:49:27 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/08/13 12:29:22 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
 # include "libft/libft.h"
 
 typedef struct		s_vars
