@@ -48,7 +48,7 @@ int				handle_s(t_vars v, va_list ap, t_fmt *f)
 	if ((f->width > v.len) && !f->left)
 	{
 		v.df = f->width - v.len;
-		ft_putnchar(' ', v.df);
+		(f->zero) ? ft_putnchar('0', v.df) : ft_putnchar(' ', v.df);
 	}
 	ft_putstr_n(v.s, v.len);
 	if ((f->width > v.len) && f->left)
@@ -90,7 +90,7 @@ int				handle_c(t_vars v, va_list ap, t_fmt *f)
 	if (((f->width > v.len || f->prec > v.len) && !f->left))
 	{
 		v.df = (f->width) ? f->width - v.len : f->prec - v.len;
-		ft_putnchar(' ', v.df);
+		(f->zero) ? ft_putnchar('0', v.df) : ft_putnchar(' ', v.df);
 	}
 	ft_putchar(v.c);
 	if ((v.c >= 0) && (f->width > v.len && f->left))
