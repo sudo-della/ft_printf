@@ -135,6 +135,8 @@ void			set_format(t_fmt *f, char **fmt, va_list ap)
 			f->prec = ft_atoi(*fmt);
 			*fmt += lenbase(f->prec, 10);
 		}
+		else if (*(*fmt) == '*')
+			asteric(f, fmt, ap, 1);
 		else if (*(*fmt) == '0')
 			(*fmt)++;
 	}
