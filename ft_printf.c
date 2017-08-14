@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/31 10:44:58 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/08/13 10:58:44 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/08/14 09:32:53 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ static int		cut2(char **s, t_fmt *f, va_list ap, t_vars v)
 	return (percent(v, f));
 }
 
+static int		cut3(va_list ap, t_fmt *f, char **s)
+{
+	++(*s);
+	return (ft_putfloat(ap, f));
+}
+
 static int		processor(char **s, t_fmt *f, va_list ap)
 {
 	t_vars		v;
@@ -88,6 +94,8 @@ static int		processor(char **s, t_fmt *f, va_list ap)
 		++(*s);
 		return (handle_wc(v, ap, f));
 	}
+	if (*(*s) == 'f' || *(*s) == 'F')
+		return (cut3(ap, f, s));
 	return (0);
 }
 
