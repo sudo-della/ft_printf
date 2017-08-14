@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 08:46:59 by ttshivhu          #+#    #+#             */
-/*   Updated: 2017/08/14 09:28:58 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2017/08/14 10:02:35 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int				ft_putfloat(va_list ap, t_fmt *f)
 	myfloat -= intpart;
 	myfloat *= places(f);
 	decipart = (signed long int)(myfloat + 0.5);
-	ft_putnbr(decipart);
-	chars += lenbase(decipart, 10);
-	return (chars);
+	f->prec = (f->prec) ? f->prec : 6;
+	(decipart != 0) ? ft_putnbr(decipart) : ft_putnchar('0', f->prec);
+	return (chars + f->prec);
 }
