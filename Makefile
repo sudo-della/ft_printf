@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 
 SRC = convert.c ft_printf.c helpers.c master.c mem.c octal.c string.c hex.c color.c \
-unsigned_d.c wstring.c binary.c cleaners.c \
+unsigned_d.c wstring.c binary.c cleaners.c ft_putfloat.c \
 
 FLAG = -Wall -Werror -Wextra
 

@@ -86,5 +86,6 @@ void				asteric(t_fmt *f, char **fmt, va_list ap, int pos);
 void				ft_cn(char c, int n);
 void				neg_line_kill(t_fmt *f, t_vars *v, t_bools *b);
 int					binary(t_vars v, va_list ap, t_fmt *f);
+int					ft_putfloat(va_list ap, t_fmt *f);
 
 #endif
